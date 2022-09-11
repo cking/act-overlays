@@ -1,0 +1,162 @@
+{
+    "kagerou":
+    {
+        "name": "Kagerou",
+        "url": "https://idyllshi.re/kagerou/overlay/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "mopimopi":
+    {
+        "name": "MopiMopi",
+        "url": "https://haeruhaeru.github.io/mopimopi/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "Ember Overlay":
+    {
+        "name": "Ember Overlay",
+        "url": "https://goldenchrysus.github.io/ffxiv/ember-overlay/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "Ember Spell Timers":
+    {
+        "name": "Ember Spell Timers",
+        "url": "https://goldenchrysus.github.io/ffxiv/ember-overlay/",
+        "options": "&mode=spells",
+        "modern": false,
+        "cactbot": false
+    },
+    "Horizoverlay":
+    {
+        "name": "Horizoverlay",
+        "url": "https://bsides.github.io/horizoverlay/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "Ikegami":
+    {
+        "name": "Ikegami",
+        "url": "https://idyllshi.re/ikegami/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "Skyline":
+    {
+        "name": "Skyline",
+        "url": "https://skyline.dsrkafuu.su",
+        "options": null,
+        "modern": true,
+        "cactbot": false
+    },
+    "Cactbot Raidboss (Combined Alerts & Timeline)":
+    {
+        "name": "Cactbot Raidboss (Combined Alerts & Timeline)",
+        "url": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot Raidboss Alerts only":
+    {
+        "name": "Cactbot Raidboss Alerts only",
+        "url": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html",
+        "options": "&alerts=1&timeline=0",
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot Raidboss Timeline only":
+    {
+        "name": "Cactbot Raidboss Timeline only",
+        "url": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html",
+        "options": "&alerts=0&timeline=1",
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot Jobs":
+    {
+        "name": "Cactbot Jobs",
+        "url": "https://quisquous.github.io/cactbot/ui/jobs/jobs.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot Eureka":
+    {
+        "name": "Cactbot Eureka",
+        "url": "https://quisquous.github.io/cactbot/ui/eureka/eureka.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot Fisher":
+    {
+        "name": "Cactbot Fisher",
+        "url": "https://quisquous.github.io/cactbot/ui/fisher/fisher.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot OopsyRaidsy":
+    {
+        "name": "Cactbot OopsyRaidsy",
+        "url": "https://quisquous.github.io/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot PullCounter":
+    {
+        "name": "Cactbot PullCounter",
+        "url": "https://quisquous.github.io/cactbot/ui/pullcounter/pullcounter.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot Radar":
+    {
+        "name": "Cactbot Radar",
+        "url": "https://quisquous.github.io/cactbot/ui/radar/radar.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot Test":
+    {
+        "name": "Cactbot Test",
+        "url": "https://quisquous.github.io/cactbot/ui/test/test.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot DPS Xephero":
+    {
+        "name": "Cactbot DPS Xephero",
+        "url": "https://quisquous.github.io/cactbot/ui/dps/xephero/xephero-cactbot.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "Cactbot DPS Rdmty":
+    {
+        "name": "Cactbot DPS Rdmty",
+        "url": "https://quisquous.github.io/cactbot/ui/dps/rdmty/dps.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "NextUI":
+    {
+        "name": "NextUI",
+        "url": "https://kaminaris.github.io/Next-UI/",
+        "options": null,
+        "modern": true,
+        "cactbot": false
+    }
+}

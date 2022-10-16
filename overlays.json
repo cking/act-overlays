@@ -174,7 +174,7 @@
     {
         "name": "Cactbot Configuration",
         "url": "https://quisquous.github.io/cactbot/ui/config/config.html",
-        "http_proxy": " http://proxy.iinact.com/overlay/cactbot/ui/config/config.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/config/config.html",
         "options": null,
         "modern": true,
         "cactbot": true,

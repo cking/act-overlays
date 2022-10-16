@@ -164,21 +164,21 @@
     "cactbot_dpsrdmty":
     {
         "name": "Cactbot DPS Rdmty",
-        "url": "https://quisquous.github.io/cactbot/ui/config/config.html",
-        "http_proxy": null,
-        "options": null,
-        "modern": true,
-        "cactbot": true,
-        "system": true
-    },
-    "cactbot_config":
-    {
-        "name": "Cactbot Configuration",
         "url": "https://quisquous.github.io/cactbot/ui/dps/rdmty/dps.html",
         "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/dps/rdmty/dps.html",
         "options": null,
         "modern": true,
         "cactbot": true
+    },
+    "cactbot_config":
+    {
+        "name": "Cactbot Configuration",
+        "url": "https://quisquous.github.io/cactbot/ui/config/config.html",
+        "http_proxy": " http://proxy.iinact.com/overlay/cactbot/ui/config/config.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true,
+        "system": true
     },
     "nextui":
     {

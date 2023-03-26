@@ -5,6 +5,8 @@ JSON List of all known (to me) ACT Overlays
 
 overlays.json is available at [overlays.json](https://cking.github.io/act-overlays/overlays.json)
 
+You have a simple URL Builder at [overlay_url_builder.html](https://cking.github.io/act-overlays/overlay_url_builder.html)
+
 ## Schema definition
 
 The raw schema is available at [overlays.schema.json](https://cking.github.io/act-overlays/overlays.schema.json).

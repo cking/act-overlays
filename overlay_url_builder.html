@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>URL Builder for overlays</title>
+        <link rel="stylesheet" href="schema_doc.css">
+    </head>
+    <body>
+        <h1>Build your overlay directly</h1>
+
+        <h2>Options</h2>
+        <form method="GET">
+            <div>
+                <label for="ws">Websocket server (OverlayPlugin URL)</label>
+                <input id="ws" name="ws" type="url" required>
+            </div>
+            <div>
+                <label for="overlay">Select your overlay</label>
+                <select id="overlay" name="overlay"></select>
+            </div>
+            <button type="submit">Generate</button>
+        </form>
+        <label for="url">Generated URL</label>
+        <input readonly id="url" style="width: 600px">
+        <button class="btn btn-outline-secondary btn-sm"
+                onclick="navigator.clipboard.writeText(document.getElementById('url').value)"><svg viewBox="0 0 24 24"
+                 fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                 stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg">
+                <rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect>
+                <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path>
+                <path d="M16 4h2a2 2 0 0 1 2 2v4"></path>
+                <path d="M21 14H11"></path>
+                <path d="m15 10-4 4 4 4"></path>
+            </svg></button>
+
+        <script>
+            window.fetch("/overlays.json").then(res => res.json()).then(j => {
+                const select = document.getElementById("overlay")
+                Object.keys(j).forEach(k => {
+                    const option = document.createElement("option")
+                    option.value = k
+                    option.appendChild(document.createTextNode(j[k].name))
+                    overlay.appendChild(option)
+                })
+                return j
+            }).then(overlays => {
+                let ws = getQueryVariable("ws")
+                const overlay = getQueryVariable("overlay")
+
+                if (!ws || !overlay) {
+                    return
+                }
+
+                let secure = ws.charAt(3) === "s"
+
+                const o = overlays[overlay]
+                let url = secure ? o.url : o.http_proxy
+
+                if (o.modern) {
+                    url += "?OVERLAY_WS="
+                } else {
+                    url += "?HTTP_PORT="
+                }
+                url += encodeURIComponent(ws)
+                if (o.modern) {
+                    url += encodeURIComponent("/ws")
+                }
+
+                if (!!o.options) {
+                    url += o.options
+                }
+
+                document.getElementById("url").value = url
+            })
+
+
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split("=");
+                    if (pair[0] == variable) {
+                        return pair[1];
+                    }
+                }
+                return null
+            }
+        </script>
+    </body>
+</html>

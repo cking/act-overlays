@@ -1,80 +1,56 @@
 {
-    "$defs": {
-        "overlay_definition": {
-            "additionalProperties": false,
-            "properties": {
-                "cactbot": {
-                    "description": "Define wether an overlay is for cactbot, and thus requires cactbot to be available",
-                    "title": "Cactbot overlay",
-                    "type": "boolean"
-                },
-                "http_proxy": {
-                    "description": "A public http proxy to the original resource. This is to allow unsecure websockets on secure overlays.",
-                    "format": "iri",
-                    "title": "HTTP proxy",
-                    "type": "string"
-                },
-                "modern": {
-                    "description": "With this you choose the style of the GET parameter to append.\n\nA modern style uses the new OverlayPlugin Standard of `OVERLAY_WS`, the legacy Version uses `HOST_PORT`.\nThe modern style implies the usage of a single websocket connection to `/ws`, and is thereby added by the overlay manager to the end of the generated URL.\n\nSee [OverlayPlugin Documentation](https: //overlayplugin.github.io/OverlayPlugin/devs/) for details",
-                    "title": "Append modern style arguments",
-                    "type": "boolean"
-                },
-                "name": {
-                    "description": "The human readable name of the overlay",
-                    "title": "Name of overlay",
-                    "type": "string"
-                },
-                "options": {
-                    "anyOf": [
-                        {
-                            "description": "No additional parameters.",
-                            "type": "null"
-                        },
-                        {
-                            "description": "A fixed string with parameters to append to the URL.",
-                            "type": "string"
-                        }
-                    ],
-                    "description": "Additional get parameters to append to the generated URL",
-                    "title": "Additional GET parameter"
-                },
-                "system": {
-                    "default": false,
-                    "description": "Define wether an overlay is a system overlay, meaning it shouldn't appear for users when creating custom overlays.",
-                    "title": "System overlay",
-                    "type": "boolean"
-                },
-                "url": {
-                    "description": "The public URL of the proxy to access the overlay",
-                    "format": "iri",
-                    "title": "URL of the overlay",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "cactbot",
-                "http_proxy",
-                "modern",
-                "name",
-                "options",
-                "url"
-            ],
-            "type": "object"
-        }
-    },
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "additionalProperties": {
-        "$ref": "#/$defs/overlay_definition"
-    },
-    "description": "An object definining overlays by an identifier key",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "required": [
+        "version",
+        "overlays"
+    ],
     "properties": {
-        "cactbot_config": {
-            "$ref": "#/$defs/overlay_definition"
+        "version": {
+            "type": "integer",
+            "const": 2
+        },
+        "overlays": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "uri"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "uri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "plaintext_uri": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "suggested_width": {
+                      "type": "integer"
+                    },
+                    "suggested_height": {
+                      "type": "integer"
+                    },
+                    "features": {
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "cactbot",
+                                "overlay_ws",
+                                "host_port",
+                                "system"
+                            ]
+                        }
+                    }
+                }
+            }
         }
-    },
-    "propertyNames": {
-        "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
-    },
-    "title": "Overlays",
-    "type": "object"
+    }
 }

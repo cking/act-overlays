@@ -1,99 +1,217 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>URL Builder for overlays</title>
-        <link rel="stylesheet" href="schema_doc.css">
-    </head>
-    <body>
-        <h1>Build your overlay directly</h1>
 
-        <h2>Options</h2>
-        <form method="GET">
-            <div>
-                <label for="ws">Websocket server (OverlayPlugin URL)</label>
-                <input id="ws" name="ws" type="url" required>
-            </div>
-            <div>
-                <label for="overlay">Select your overlay</label>
-                <select id="overlay" name="overlay"></select>
-            </div>
-            <button type="submit">Generate</button>
-        </form>
-        <label for="url">Generated URL</label>
-        <input readonly id="url" style="width: 600px">
-        <button class="btn btn-outline-secondary btn-sm"
-                onclick="navigator.clipboard.writeText(document.getElementById('url').value)"><svg viewBox="0 0 24 24"
-                 fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                 stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg">
-                <rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect>
-                <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path>
-                <path d="M16 4h2a2 2 0 0 1 2 2v4"></path>
-                <path d="M21 14H11"></path>
-                <path d="m15 10-4 4 4 4"></path>
-            </svg></button>
+<head>
+    <title>URI Builder for overlays</title>
+</head>
 
-        <script>
-            window.fetch("overlays.json").then(res => res.json()).then(j => {
-                const select = document.getElementById("overlay")
-                Object.keys(j).forEach(k => {
-                    const option = document.createElement("option")
-                    option.value = k
-                    option.appendChild(document.createTextNode(j[k].name))
-                    overlay.appendChild(option)
-                })
-                return j
-            }).then(overlays => {
-                let ws = getQueryVariable("ws")
-                const overlay = getQueryVariable("overlay")
+<body>
+    <h1>Overlay URI Builder</h1>
+    <div>
+        <label for="ws">OverlayPlugin WebSocket URI: </label>
+        <input id="ws" name="ws" value="ws://127.0.0.1:10501/ws">
+    </div>
+    <div>
+        <label for="overlay">Overlay: </label>
+        <select id="overlay" name="overlay"></select>
+    </div>
+    <button onclick="javascript:generateUri()">Generate</button>
+    <label for="uri">Generated URI</label>
+    <input readonly id="uri" style="width: 600px">
+    <button class="btn btn-outline-secondary btn-sm" onclick="javascript:copyUriToClipboard()">&#128203;</button>
 
-                if (!ws || !overlay) {
-                    return
+    <script>
+        let config = {
+            "version": 2,
+            "overlays": [
+                {
+                    "name": "Cactbot Configuration",
+                    "uri": "https://quisquous.github.io/cactbot/ui/config/config.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/config/config.html",
+                    "features": ["cactbot", "system", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot DPS Xephero",
+                    "uri": "https://quisquous.github.io/cactbot/ui/dps/xephero/xephero-cactbot.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/dps/xephero/xephero-cactbot.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot DPS Rdmty",
+                    "uri": "https://quisquous.github.io/cactbot/ui/dps/rdmty/dps.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/dps/rdmty/dps.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Eureka",
+                    "uri": "https://quisquous.github.io/cactbot/ui/eureka/eureka.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/eureka/eureka.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Fisher",
+                    "uri": "https://quisquous.github.io/cactbot/ui/fisher/fisher.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/fisher/fisher.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Jobs",
+                    "uri": "https://quisquous.github.io/cactbot/ui/jobs/jobs.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/jobs/jobs.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot OopsyRaidsy",
+                    "uri": "https://quisquous.github.io/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot PullCounter",
+                    "uri": "https://quisquous.github.io/cactbot/ui/pullcounter/pullcounter.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/pullcounter/pullcounter.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Radar",
+                    "uri": "https://quisquous.github.io/cactbot/ui/radar/radar.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/radar/radar.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Raidboss Alerts only",
+                    "uri": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html?alerts=1&timeline=0",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html?alerts=1&timeline=0",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Raidboss (Combined Alerts & Timeline)",
+                    "uri": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Raidboss Timeline only",
+                    "uri": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html?alerts=0&timeline=1",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html?alerts=0&timeline=1",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Cactbot Test",
+                    "uri": "https://quisquous.github.io/cactbot/ui/test/test.html",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/test/test.html",
+                    "features": ["cactbot", "overlay_ws"]
+                },
+                {
+                    "name": "Ember Overlay",
+                    "uri": "https://goldenchrysus.github.io/ffxiv/ember-overlay/",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/ember_overlay/",
+                    "features": ["host_port"]
+                },
+                {
+                    "name": "Ember Spell Timers",
+                    "uri": "https://goldenchrysus.github.io/ffxiv/ember-overlay/?mode=spells",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/ember_overlay/?mode=spells",
+                    "features": ["host_port"]
+                },
+                {
+                    "name": "Horizoverlay",
+                    "uri": "https://bsides.github.io/horizoverlay/",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/horizoverlay/",
+                    "features": ["host_port"]
+                },
+                {
+                    "name": "Ikegami",
+                    "uri": "https://idyllshi.re/ikegami/",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/ikegami/",
+                    "features": ["host_port"]
+                },
+                {
+                    "name": "Kagerou",
+                    "uri": "https://idyllshi.re/kagerou/overlay/",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/kagerou/",
+                    "features": ["host_port"]
+                },
+                {
+                    "name": "MopiMopi",
+                    "uri": "https://haeruhaeru.github.io/mopimopi/",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/mopimopi/",
+                    "features": ["host_port"]
+                },
+                {
+                    "name": "NextUI",
+                    "uri": "https://kaminaris.github.io/Next-UI/",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/nextui/",
+                    "features": ["overlay_ws"]
+                },
+                {
+                    "name": "Skyline",
+                    "uri": "https://skyline.dsrkafuu.su",
+                    "plaintext_uri": "http://proxy.iinact.com/overlay/skyline/",
+                    "features": ["overlay_ws"]
                 }
+            ]
+        };
 
-                if (!ws.startsWith("ws://" || !ws.startsWith("wss://"))) {
-                    alert("Invalid websocket URL!")
-                    return
-                }
+        function generateUri() {
+            const ws = document.getElementById("ws").value;
+            const overlayName = document.getElementById("overlay").value;
 
-                if (!overlays[overlay]) {
-                    alert("Overlay not found!")
+            const overlay = config.overlays.filter(o => o.name === overlayName)[0];
+
+            let wsUri;
+            try {
+                wsUri = new URL(ws);
+                if (!wsUri.protocol === "ws:" || !wsUri.protocol === "wss:") {
+                    alert("Invalid WebSocket Overlay URI, (it should start with ws:// or wss://) : " + ws);
                     return;
                 }
-
-                let secure = ws.charAt(3) === "s"
-
-                const o = overlays[overlay]
-                let url = secure ? o.url : o.http_proxy
-
-                if (o.modern) {
-                    url += "?OVERLAY_WS="
-                } else {
-                    url += "?HTTP_PORT="
-                }
-                url += encodeURIComponent(ws)
-                if (o.modern) {
-                    url += encodeURIComponent("/ws")
-                }
-
-                if (!!o.options) {
-                    url += o.options
-                }
-
-                document.getElementById("url").value = url
-            })
-
-
-            function getQueryVariable(variable) {
-                var query = window.location.search.substring(1);
-                var vars = query.split("&");
-                for (var i = 0; i < vars.length; i++) {
-                    var pair = vars[i].split("=");
-                    if (pair[0] == variable) {
-                        return pair[1];
-                    }
-                }
-                return null
+            } catch (e) {
+                alert("Invalid WebSocket Overlay URI: " + ws);
+                return;
             }
-        </script>
-    </body>
+
+            let overlayUri;
+            if (wsUri.protocol === "wss:") {
+                overlayUri = new URL(overlay.uri);
+            } else if (wsUri.protocol === "ws:") {
+                overlayUri = new URL(overlay.plaintext_uri ?? overlay.uri);
+            } else {
+                throw new Error("Unsupported WebSocket protocol");
+            }
+
+            for (const feature of overlay.features ?? []) {
+                if (feature === "overlay_ws") {
+                    overlayUri.searchParams.append('OVERLAY_WS', wsUri.href);
+                } else if (feature === "host_port") {
+                    overlayUri.searchParams.append('HOST_PORT', wsUri.origin);
+                }
+            }
+
+            // Workaround for overlays not supporting URI encoding
+            overlayUri.search = window.decodeURIComponent(overlayUri.searchParams.toString());
+            document.getElementById('uri').value = overlayUri.href;
+        }
+
+        function copyUriToClipboard() {
+            navigator.clipboard.writeText(document.getElementById('uri').value);
+        }
+
+        (async () => {
+            try {
+                // Try fetching an updated list of overlays
+                config = await (await window.fetch("overlays.json")).json();
+            } catch (e) { }
+
+            const select = document.getElementById("overlay");
+            for (const overlay of config.overlays) {
+                const option = document.createElement("option");
+                option.value = overlay.name;
+                option.label = overlay.name;
+                select.appendChild(option)
+            }
+        })();
+    </script>
+</body>
+
 </html>

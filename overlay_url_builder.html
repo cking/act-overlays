@@ -50,6 +50,16 @@
                     return
                 }
 
+                if (!ws.startsWith("ws://" || !ws.startsWith("wss://"))) {
+                    alert("Invalid websocket URL!")
+                    return
+                }
+
+                if (!overlays[overlay]) {
+                    alert("Overlay not found!")
+                    return;
+                }
+
                 let secure = ws.charAt(3) === "s"
 
                 const o = overlays[overlay]

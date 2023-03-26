@@ -32,7 +32,7 @@
             </svg></button>
 
         <script>
-            window.fetch("/overlays.json").then(res => res.json()).then(j => {
+            window.fetch("overlays.json").then(res => res.json()).then(j => {
                 const select = document.getElementById("overlay")
                 Object.keys(j).forEach(k => {
                     const option = document.createElement("option")

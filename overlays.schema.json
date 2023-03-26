@@ -15,7 +15,7 @@
                     "type": "string"
                 },
                 "modern": {
-                    "description": "The format of the GET parameter to append to the URL. With it being enabled, the appended parameter is called `OVERLAY_WS` and has a `/ws` suffix, otherwise it's `HOST_PORT` without a suffix",
+                    "description": "With this you choose the style of the GET parameter to append.\n\nA modern style uses the new OverlayPlugin Standard of `OVERLAY_WS`, the legacy Version uses `HOST_PORT`.\nThe modern style implies the usage of a single websocket connection to `/ws`, and is thereby added by the overlay manager to the end of the generated URL.\n\nSee [OverlayPlugin Documentation](https: //overlayplugin.github.io/OverlayPlugin/devs/) for details",
                     "title": "Append modern style arguments",
                     "type": "boolean"
                 },
@@ -35,7 +35,6 @@
                             "type": "string"
                         }
                     ],
-                    "default": null,
                     "description": "Additional get parameters to append to the generated URL",
                     "title": "Additional GET parameter"
                 },

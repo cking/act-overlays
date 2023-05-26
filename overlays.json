@@ -177,7 +177,7 @@
         },
         {
             "name": "Skyline",
-            "uri": "https://skyline.dsrkafuu.su",
+            "uri": "https://skyline.dsrkafuu.net/",
             "plaintext_uri": "http://proxy.iinact.com/overlay/skyline/",
             "features": [
                 "overlay_ws"

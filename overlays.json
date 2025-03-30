@@ -1,187 +1,192 @@
 {
-    "version": 2,
-    "overlays": [
-        {
-            "name": "Cactbot Configuration",
-            "uri": "https://quisquous.github.io/cactbot/ui/config/config.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/config/config.html",
-            "features": [
-                "cactbot",
-                "system",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot DPS Xephero",
-            "uri": "https://quisquous.github.io/cactbot/ui/dps/xephero/xephero-cactbot.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/dps/xephero/xephero-cactbot.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot DPS Rdmty",
-            "uri": "https://quisquous.github.io/cactbot/ui/dps/rdmty/dps.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/dps/rdmty/dps.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Eureka",
-            "uri": "https://quisquous.github.io/cactbot/ui/eureka/eureka.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/eureka/eureka.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Fisher",
-            "uri": "https://quisquous.github.io/cactbot/ui/fisher/fisher.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/fisher/fisher.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Jobs",
-            "uri": "https://quisquous.github.io/cactbot/ui/jobs/jobs.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/jobs/jobs.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot OopsyRaidsy",
-            "uri": "https://quisquous.github.io/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot PullCounter",
-            "uri": "https://quisquous.github.io/cactbot/ui/pullcounter/pullcounter.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/pullcounter/pullcounter.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Radar",
-            "uri": "https://quisquous.github.io/cactbot/ui/radar/radar.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/radar/radar.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Raidboss Alerts only",
-            "uri": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html?alerts=1&timeline=0",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html?alerts=1&timeline=0",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Raidboss (Combined Alerts & Timeline)",
-            "uri": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Raidboss Timeline only",
-            "uri": "https://quisquous.github.io/cactbot/ui/raidboss/raidboss.html?alerts=0&timeline=1",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html?alerts=0&timeline=1",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Cactbot Test",
-            "uri": "https://quisquous.github.io/cactbot/ui/test/test.html",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/test/test.html",
-            "features": [
-                "cactbot",
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Ember Overlay",
-            "uri": "https://goldenchrysus.github.io/ffxiv/ember-overlay/",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/ember_overlay/",
-            "features": [
-                "host_port"
-            ]
-        },
-        {
-            "name": "Ember Spell Timers",
-            "uri": "https://goldenchrysus.github.io/ffxiv/ember-overlay/?mode=spells",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/ember_overlay/?mode=spells",
-            "features": [
-                "host_port"
-            ]
-        },
-        {
-            "name": "Horizoverlay",
-            "uri": "https://bsides.github.io/horizoverlay/",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/horizoverlay/",
-            "features": [
-                "host_port"
-            ]
-        },
-        {
-            "name": "Ikegami",
-            "uri": "https://idyllshi.re/ikegami/",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/ikegami/",
-            "features": [
-                "host_port"
-            ]
-        },
-        {
-            "name": "Kagerou",
-            "uri": "https://idyllshi.re/kagerou/overlay/",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/kagerou/",
-            "features": [
-                "host_port"
-            ]
-        },
-        {
-            "name": "MopiMopi",
-            "uri": "https://haeruhaeru.github.io/mopimopi/",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/mopimopi/",
-            "features": [
-                "host_port"
-            ]
-        },
-        {
-            "name": "NextUI",
-            "uri": "https://kaminaris.github.io/Next-UI/",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/nextui/",
-            "features": [
-                "overlay_ws"
-            ]
-        },
-        {
-            "name": "Skyline",
-            "uri": "https://skyline.dsrkafuu.net/",
-            "plaintext_uri": "http://proxy.iinact.com/overlay/skyline/",
-            "features": [
-                "overlay_ws"
-            ]
-        }
-    ]
+    "kagerou":
+    {
+        "name": "Kagerou",
+        "url": "https://idyllshi.re/kagerou/overlay/",
+        "http_proxy": "http://proxy.iinact.com/overlay/kagerou/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "mopimopi":
+    {
+        "name": "MopiMopi",
+        "url": "https://haeruhaeru.github.io/mopimopi/",
+        "http_proxy": "http://proxy.iinact.com/overlay/mopimopi/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "ember_overlay":
+    {
+        "name": "Ember Overlay",
+        "url": "https://goldenchrysus.github.io/ffxiv/ember-overlay/",
+        "http_proxy": "http://proxy.iinact.com/overlay/ember_overlay/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "ember_spell_timers":
+    {
+        "name": "Ember Spell Timers",
+        "url": "https://goldenchrysus.github.io/ffxiv/ember-overlay/",
+        "http_proxy": "http://proxy.iinact.com/overlay/ember_overlay/",
+        "options": "&mode=spells",
+        "modern": false,
+        "cactbot": false
+    },
+    "horizoverlay":
+    {
+        "name": "Horizoverlay",
+        "url": "https://bsides.github.io/horizoverlay/",
+        "http_proxy": "http://proxy.iinact.com/overlay/horizoverlay/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "ikegami":
+    {
+        "name": "Ikegami",
+        "url": "https://idyllshi.re/ikegami/",
+        "http_proxy": "http://proxy.iinact.com/overlay/ikegami/",
+        "options": null,
+        "modern": false,
+        "cactbot": false
+    },
+    "skyline":
+    {
+        "name": "Skyline",
+        "url": "https://skyline.dsrkafuu.su",
+        "http_proxy": "http://proxy.iinact.com/overlay/skyline/",
+        "options": null,
+        "modern": true,
+        "cactbot": false
+    },
+    "cactbot_raidboss_combined":
+    {
+        "name": "Cactbot Raidboss (Combined Alerts & Timeline)",
+        "url": "https://overlayplugin.github.io/cactbot/ui/raidboss/raidboss.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_raidboss_alerts":
+    {
+        "name": "Cactbot Raidboss Alerts only",
+        "url": "https://overlayplugin.github.io/cactbot/ui/raidboss/raidboss.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html",
+        "options": "&alerts=1&timeline=0",
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_raidboss_timeline":
+    {
+        "name": "Cactbot Raidboss Timeline only",
+        "url": "https://overlayplugin.github.io/cactbot/ui/raidboss/raidboss.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/raidboss/raidboss.html",
+        "options": "&alerts=0&timeline=1",
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_jobs":
+    {
+        "name": "Cactbot Jobs",
+        "url": "https://overlayplugin.github.io/cactbot/ui/jobs/jobs.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/jobs/jobs.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_eureka":
+    {
+        "name": "Cactbot Eureka",
+        "url": "https://overlayplugin.github.io/cactbot/ui/eureka/eureka.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/eureka/eureka.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_fisher":
+    {
+        "name": "Cactbot Fisher",
+        "url": "https://overlayplugin.github.io/cactbot/ui/fisher/fisher.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/fisher/fisher.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_oopsyraidsy":
+    {
+        "name": "Cactbot OopsyRaidsy",
+        "url": "https://overlayplugin.github.io/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_pullcounter":
+    {
+        "name": "Cactbot PullCounter",
+        "url": "https://overlayplugin.github.io/cactbot/ui/pullcounter/pullcounter.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/pullcounter/pullcounter.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_radar":
+    {
+        "name": "Cactbot Radar",
+        "url": "https://overlayplugin.github.io/cactbot/ui/radar/radar.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/radar/radar.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_test":
+    {
+        "name": "Cactbot Test",
+        "url": "https://overlayplugin.github.io/cactbot/ui/test/test.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/test/test.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_dps_xephero":
+    {
+        "name": "Cactbot DPS Xephero",
+        "url": "https://overlayplugin.github.io/cactbot/ui/dps/xephero/xephero-cactbot.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/dps/xephero/xephero-cactbot.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_dpsrdmty":
+    {
+        "name": "Cactbot DPS Rdmty",
+        "url": "https://overlayplugin.github.io/cactbot/ui/dps/rdmty/dps.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/dps/rdmty/dps.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true
+    },
+    "cactbot_config":
+    {
+        "name": "Cactbot Configuration",
+        "url": "https://overlayplugin.github.io/cactbot/ui/config/config.html",
+        "http_proxy": "http://proxy.iinact.com/overlay/cactbot/ui/config/config.html",
+        "options": null,
+        "modern": true,
+        "cactbot": true,
+        "system": true
+    },
+    "nextui":
+    {
+        "name": "NextUI",
+        "url": "https://kaminaris.github.io/Next-UI/",
+        "http_proxy": "http://proxy.iinact.com/overlay/nextui/",
+        "options": null,
+        "modern": true,
+        "cactbot": false
+    }
 }

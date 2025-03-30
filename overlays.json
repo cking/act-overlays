@@ -13,7 +13,7 @@
         },
         {
             "name": "Cactbot DPS Xephero",
-            "uri": "https://overlayplugin.github.io/cactbot/ui//dps/xephero/xephero-cactbot.html",
+            "uri": "https://overlayplugin.github.io/cactbot/ui/dps/xephero/xephero-cactbot.html",
             "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/dps/xephero/xephero-cactbot.html",
             "features": [
                 "cactbot",
@@ -58,7 +58,7 @@
         },
         {
             "name": "Cactbot OopsyRaidsy",
-            "uri": "https://quisquous.github.io/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
+            "uri": "https://overlayplugin.github.io/cactbot/ui//oopsyraidsy/oopsyraidsy.html",
             "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/oopsyraidsy/oopsyraidsy.html",
             "features": [
                 "cactbot",
@@ -112,7 +112,7 @@
         },
         {
             "name": "Cactbot Test",
-            "uri": "https://quisquous.github.io/cactbot/ui/test/test.html",
+            "uri": "https://overlayplugin.github.io/cactbot/ui/test/test.html",
             "plaintext_uri": "http://proxy.iinact.com/overlay/cactbot/ui/test/test.html",
             "features": [
                 "cactbot",
